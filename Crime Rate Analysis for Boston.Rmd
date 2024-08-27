@@ -1,0 +1,356 @@
+---
+title: "Boston Crime Analysis"
+output:
+  html_document: default
+  word_document: default
+date: "2023-08-27"
+---
+
+
+# WHAT IS THE PROBLEM ABOUT
+
+This problem involves the Boston data set. Here, I am predicting per capita crime rate using the some of the variables in this data set. In simple words, per capita crime rate is the response, and the other variables are the predictors.
+
+I HAVE DIVIDED THE PROJECT INTO SECTIONS SO THAT IT GIVES CLARITY TO THE VIEWER ON WHAT TO EXPECT IN EACH STAGE
+
+# OVERVIEW OF THE FIRST STEPS TAKEN
+
+First, for each predictor, I will fit a simple linear regression model to predict the response. Then you can find my take on the results below. I will also mention in which of the models there is a statistically significant association between the predictor and the response. What will this do? Well, it will help us understand to choose the best model in similar datasets in the future with similar circumstances. Then finally, I will also create some plots to back up your assertions.
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit1<- lm(crim ~ zn, Boston)
+summary(lm.fit1)
+plot(Boston$zn, Boston$crim, pch = 20, main = "Relationship of zn and crim")
+plot(lm.fit1)
+```
+#Here, we see that the pvalue is low so we can reject null Hyposthesis and determine that there is a significant relationship between zn and crim.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit2<- lm(crim ~ indus, Boston)
+summary(lm.fit2)
+plot(Boston$indus, Boston$crim, pch = 20, main = "Relationship of indus and crim")
+plot(lm.fit2)
+```
+#Here, we see that the pvalue is low so we can reject null Hyposthesis and determine that there is a significant relationship between indus and crim.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit3<- lm(crim ~ chas, Boston)
+summary(lm.fit3)
+plot(Boston$chas, Boston$crim, pch = 20, main = "Relationship of chas and crim")
+plot(lm.fit3)
+```
+#Here, p-value is greater than 0.05 so we cannot reject null hypothesis. Thus, there is no significant relationship between chas and crim
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit4<- lm(crim ~ nox, Boston)
+summary(lm.fit4)
+plot(Boston$nox, Boston$crim, pch = 20, main = "Relationship of nox and crim")
+plot(lm.fit4)
+```
+#Here, we see that the pvalue is low so we can reject null Hyposthesis and determine that there is a significant relationship between nox and crim.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit5<- lm(crim ~ rm, Boston)
+summary(lm.fit5)
+plot(Boston$rm, Boston$crim, pch = 20, main = "Relationship of rm and crim")
+plot(lm.fit5)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between rm and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit6<- lm(crim ~ age, Boston)
+summary(lm.fit6)
+plot(Boston$age, Boston$crim, pch = 20, main = "Relationship of age and crim")
+plot(lm.fit6)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between age and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit7<- lm(crim ~ dis, Boston)
+summary(lm.fit7)
+plot(Boston$dis, Boston$crim, pch = 20, main = "Relationship of dis and crim")
+plot(lm.fit7)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between dis and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit8<- lm(crim ~ rad, Boston)
+summary(lm.fit8)
+plot(Boston$rad, Boston$crim, pch = 20, main = "Relationship of rad and crim")
+plot(lm.fit8)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between rad and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit9<- lm(crim ~ tax, Boston)
+summary(lm.fit9)
+plot(Boston$tax, Boston$crim, pch = 20, main = "Relationship of tax and crim")
+plot(lm.fit9)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between tax and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit10<- lm(crim ~ ptratio, Boston)
+summary(lm.fit10)
+plot(Boston$ptratio, Boston$crim, pch = 20, main = "Relationship of ptratio and crim")
+plot(lm.fit10)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between ptratio and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit11<- lm(crim ~ black, Boston)
+summary(lm.fit11)
+plot(Boston$black, Boston$crim, pch = 20, main = "Relationship of black and crim")
+plot(lm.fit11)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between rm and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit12<- lm(crim ~ lstat, Boston)
+summary(lm.fit12)
+plot(Boston$lstat, Boston$crim, pch = 20, main = "Relationship of lstat and crim")
+plot(lm.fit12)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between lstat and crim is not significant.
+
+
+```{r}
+library(MASS)
+data("Boston")
+colnames(Boston)
+lm.fit13<- lm(crim ~ medv, Boston)
+summary(lm.fit13)
+plot(Boston$medv, Boston$crim, pch = 20, main = "Relationship of medv and crim")
+plot(lm.fit13)
+```
+#Here, p value was low so null hypothesis could be rejected, but R squared value and adjusted R squared value is also low so relationship between medv and crim is not significant.
+
+
+
+###############################
+
+
+# OVERVIEW OF THE NEXT STEPS TAKEN
+
+I will fit a multiple regression model to predict the response using all of the predictors and then I will also write a small explanation of the results. Finally, I will determine for which predictors can we reject the null hypothesis H0 : βj = 0? What will it do, well it will help us determines which variables are important predictors.
+
+```{r}
+
+lm.fitmultiple <- lm(crim~.,data = Boston)
+summary(lm.fitmultiple)
+```
+#we see that the predictors "zn", "dis", "rad", "black" and "medv" are statistically significant becuase of their low p-value. Hence we can reject the null-hypothesis for these predictors.
+
+
+
+
+##########################################
+
+# OVERVIEW OF THE THIRD PART
+
+Then comparing how the results from (a) compare to the results from (b)? Then I will create a plot displaying the univariate regression coefficients from (a) on the x-axis, and the multiple regression coefficients from (b) on the y-axis. That is, each predictor will be displayed as a single point in the plot. Its coefficient in a simple linear regression model will be shown on the x-axis, and its coefficient estimate in the multiple linear regression model will be shown on the y-axis.
+```{r}
+#First lets create a vector with the coefficients of all the simple regression models in a.
+simplecoef <- vector("numeric", 0)
+simplecoef <- c(simplecoef, lm.fit1$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit2$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit3$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit4$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit5$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit6$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit7$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit8$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit9$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit10$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit11$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit12$coefficients[2])
+simplecoef <- c(simplecoef, lm.fit13$coefficients[2])
+simplecoef
+
+#Now, creating a vector for the multiple regression coefficients
+multiplecoef <- vector("numeric", 0)
+multiplecoef <- c(multiplecoef, lm.fitmultiple$coefficients)
+multiplecoef <- multiplecoef[-1]
+multiplecoef
+
+#Now plotting,
+plot(simplecoef, multiplecoef, col = "green", pch = 20, ylab = "Coefficients of multiple regression", xlab = "Coefficients of Univariate regression", main = "Plot between Multiple regression coefficients and Univariate regression coefficients")
+```
+#Now explaining the first part of the question, we see that the coefficients in (a) or Univariate regression coefficients and the coefficients in (b) or multiple regression coefficients have a striking difference. We see that the according to multiple regression, per capita crime has almost no relationship with the a lot of the predictors if not all. However, in the simple regression it is not the case as there are association of per capita crime with a lot of predictors.
+
+
+
+
+
+##################################
+
+
+# OVERVIEW OF THE NEXT PART
+
+# I am checking if there is evidence of non-linear association between any of the predictors and the response? To answer this question, for each predictor X, I will fit a model of the form Y = β0 + β1X + β2X2 + β3X3 + ϵ.
+```{r}
+#crim=β0+β1(zn)+β2(zn)2+β3(zn)3+ϵ
+lm.zn <- lm(crim ~ zn + I(zn^2) + I(zn^3), data = Boston)
+summary(lm.zn)
+```
+#Zn and crim does not have a non-linear association as the p-values for the degree 2 term and the degree three term are large.
+
+
+
+```{r}
+#crim=β0+β1(indus)+β2(indus)2+β3(indus)3+ϵ
+lmindus <- lm(crim ~ indus + I(indus^2) + I(indus^3), data = Boston)
+summary(lmindus)
+```
+#Since the p values of both the degree 2 term and degree3 term are small, there is a non-linear association with crim.
+
+
+
+```{r}
+#crim=β0+β1(chas)+β2(chas)2+β3(chas)3+ϵ
+lmchas <- lm(crim ~ chas + I(chas^2) + I(chas^3), data = Boston)
+summary(lmchas)
+```
+#it shows NA as chas is a factor so it does not affect the crime rate.
+
+
+
+```{r}
+#crim=β0+β1(nox)+β2(nox)2+β3(nox)3+ϵ
+lmnox <- lm(crim ~ nox + I(nox^2) + I(nox^3), data = Boston)
+summary(lmnox)
+```
+#as per p-values, nox does have a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(rm)+β2(rm)2+β3(rm)3+ϵ
+lmrm <- lm(crim ~ rm + I(rm^2) + I(rm^3), data = Boston)
+summary(lmrm)
+```
+#as per p-value, rm does NOT have a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(age)+β2(age)2+β3(age)3+ϵ
+lmage <- lm(crim ~ age + I(age^2) + I(age^3), data = Boston)
+summary(lmage)
+```
+#as per  p-values, age has a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(dis)+β2(dis)2+β3(dis)3+ϵ
+lmdis <- lm(crim ~ dis + I(dis^2) + I(dis^3), data = Boston)
+summary(lmdis)
+```
+#as per the p values, dis has a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(rad)+β2(rad)2+β3(rad)3+ϵ
+lmrad <- lm(crim ~ rad + I(rad^2) + I(rad^3), data = Boston)
+summary(lmrad)
+```
+#as per the p values, rad does not have a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(tax)+β2(tax)2+β3(tax)3+ϵ
+lmtax <- lm(crim ~ tax + I(tax^2) + I(tax^3), data = Boston)
+summary(lmtax)
+```
+#as per p value, tax does not have a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(ptratio)+β2(ptratio)2+β3(ptratio)3+ϵ
+lmptratio <- lm(crim ~ ptratio + I(ptratio^2) + I(ptratio^3), data = Boston)
+summary(lmptratio)
+```
+#as per p value, ptratio shows a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(black)+β2(black)2+β3(black)3+ϵ
+lmblack <- lm(crim ~ black + I(black^2) + I(black^3), data = Boston)
+summary(lmblack)
+```
+#as per p values, black does not have a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(lstat)+β2(lstat)2+β3(lstat)3+ϵ
+lmlstat <- lm(crim ~ lstat + I(lstat^2) + I(lstat^3), data = Boston)
+summary(lmlstat)
+```
+#as per the p-value, lstat does not have a non-linear association with crim
+
+
+
+```{r}
+#crim=β0+β1(medv)+β2(medv)2+β3(medv)3+ϵ
+lmmedv <- lm(crim ~ medv + I(medv^2) + I(medv^3), data = Boston)
+summary(lmmedv)
+```
+#based on p-values, medv has a non-linear association with crim.
+
+
+
+
+#######################################################
