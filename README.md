@@ -1,5 +1,22 @@
 # 🏙️ Boston Crime Insights: Predictive Modeling of Crime Rates
 
+## CHOOSE THE SECTION YOU WANT TO JUMP TO:
+
+<p align="center">
+  <a href="#-project-overview">
+    <img src="https://img.shields.io/badge/-Project%20Overview-blue?style=for-the-badge" alt="Project Overview">
+  </a>
+  <a href="#-business-impact">
+    <img src="https://img.shields.io/badge/-Business%20Impact-green?style=for-the-badge" alt="Business Impact">
+  </a>
+  <a href="#-key-findings">
+    <img src="https://img.shields.io/badge/-Key%20Findings-red?style=for-the-badge" alt="Key Findings">
+  </a>
+  <a href="#-conclusion">
+    <img src="https://img.shields.io/badge/-Conclusion-purple?style=for-the-badge" alt="Conclusion">
+  </a>
+</p>
+
 ## 📊 Project Overview
 
 This project analyzes the Boston dataset to predict per capita crime rates using various urban and socioeconomic factors. By employing statistical learning techniques, we aim to uncover key predictors of crime rates and provide actionable insights for urban planning and policymaking.
@@ -42,6 +59,7 @@ The Boston dataset is used for this analysis. It is under the library "MASS" in 
 2. **Simple Linear Regression**: Fitted individual models for each predictor.
 3. **Multiple Linear Regression**: Developed a comprehensive model using all predictors.
 4. **Non-linear Analysis**: Investigated potential non-linear relationships using polynomial terms.
+5. **Other methods used**: Best subset selection, the lasso, ridge regression, and PCR.
 
 ## 🔑 Key Findings
 
@@ -85,3 +103,16 @@ For urban development companies, real estate firms, or city planners:
 ## ⚙️ Installation and Usage
 
 1. Clone the repository:
+2. Install R and necessary packages:
+```R
+install.packages("MASS")
+```
+3. Run the script
+```
+Rscript boston_crime_analysis.R
+```
+
+## 🎓 Conclusion
+
+This analysis demonstrates the complex interplay of factors influencing urban crime rates. While certain variables like zoning, accessibility, and housing values show clear correlations, the presence of non-linear relationships highlights the need for nuanced approaches to urban planning and policy-making. By understanding these dynamics, stakeholders can make more informed decisions to foster safer, more prosperous urban environments.
+
