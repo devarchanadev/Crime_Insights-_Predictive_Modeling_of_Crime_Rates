@@ -1,4 +1,4 @@
-# 🏙️ Boston Crime Insights: Predictive Modeling of Crime Rates
+# 🏙️ Crime Insights: Predictive Modeling of Crime Rates
 
 ## CHOOSE THE SECTION YOU WANT TO JUMP TO:
 
